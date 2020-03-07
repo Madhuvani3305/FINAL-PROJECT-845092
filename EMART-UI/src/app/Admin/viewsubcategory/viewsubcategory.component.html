@@ -1,0 +1,27 @@
+<div class="card m-1" style="width:100%;align-items: center;">
+    <div class="container">
+        <table class="table table-bordered">
+            <tr>
+                <th>Category Id</th>
+                <th>Sub Category Id</th>
+                <th>BriefDetails</th>
+               <th>Sub Category Name</th>
+               <th>GST</th>
+
+
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let item of list">
+               <td>{{item.cid}}</td>
+               <td>{{item.scid}}</td>
+               <td>{{item.scdetails}}</td>
+               <td>{{item.sname}}</td>
+               <td>{{item.gst}}</td>
+               <td><button class="btn btn-info btn-lg" type="button" data-toggle="modal" data-target="#mymodal" (click)="Update()">Edit</button></td>
+               <td><button class="btn-danger btn-lg" type="button" (click)="Delete(item.cid)">Delete</button></td>
+            </tr>
+        </table>
+</div>
+</div>
+        
