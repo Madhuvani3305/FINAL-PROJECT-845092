@@ -47,9 +47,9 @@ cart:Cart;
       console.log(err);
     })
   }
-  buy(item:Items){
-    console.log(item);
-    localStorage.setItem('item1',JSON.stringify(item));
+  buy(item2:Items){
+    console.log(item2);
+    localStorage.setItem('item1',JSON.stringify(item2));
     this.router.navigateByUrl('buyer-landingpage/buyproduct');
   }
   // Add(item:Items){
@@ -65,8 +65,8 @@ cart:Cart;
    this.cart.cartid=Math.round(Math.random()*1000);
    this.cart.iid=item2.iid;
    this.cart.itemName=item2.itemName;
-   this.cart.categoryId=item2.cid;
-   this.cart.subcategoryId=item2.scid;
+   this.cart.cid=item2.cid;
+   this.cart.scid=item2.scid;
    this.cart.sid=item2.sid;
    this.cart.stockNo=item2.stockNo;
    this.cart.price=item2.price;

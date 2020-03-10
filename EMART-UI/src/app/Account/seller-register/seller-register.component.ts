@@ -37,6 +37,7 @@ export class SellerRegisterComponent implements OnInit {
   onSubmit()
   {
     this.submitted= true;
+    if(this.sellerregistrationform.valid){
     this.seller=new Seller();
     this.seller.sid=Math.round(Math.random()*1000);
     this.seller.sname=this.sellerregistrationform.value["sname"];
@@ -60,6 +61,7 @@ export class SellerRegisterComponent implements OnInit {
       console.log(JSON.stringify(this.sellerregistrationform.value));
       
     }
+  }
 
   }
 

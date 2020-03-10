@@ -83,6 +83,7 @@ Search1(){
 }
  
   Update()
+  
   {
     this.item=new Items();
     this.item.iid=Number(this.itemForm.value["iid"]);

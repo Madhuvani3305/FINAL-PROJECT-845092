@@ -1,8 +1,8 @@
 export class Cart {
   cartid:number;
   iid:number;
-  categoryId:number;
-  subcategoryId:number;
+  cid:number;
+  scid:number;
   price:number;
   description:string;
   stockNo:number;

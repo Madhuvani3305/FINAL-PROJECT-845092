@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 export class SlandingpageComponent implements OnInit {
   name:string;
   constructor( private route:Router) {
+    if(localStorage.getItem("sid")==null)
+    {
+      this.route.navigateByUrl("/home/login");
+    }
     if(sessionStorage.getItem("un"))
     {
     this.name=sessionStorage.getItem("un");

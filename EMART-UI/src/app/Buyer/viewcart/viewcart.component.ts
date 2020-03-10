@@ -23,6 +23,15 @@ count:number;
       console.log(res);
     })
    }
+   Remove(cartid:number){
+  let id=cartid;
+    alert("deleted")
+    console.log(cartid);
+    this.service.deletefromcart(cartid).subscribe(res=>{
+      console.log('Item Removed from Cart');
+      alert('Item Removed from Cart');
+    })
+  }
   ngOnInit() {
   } 
 }
