@@ -17,9 +17,8 @@ export class SlandingpageComponent implements OnInit {
     this.name=sessionStorage.getItem("un");
     console.log(this.name);
    }
-  
-
 }
+
 
   ngOnInit() {
   }
@@ -27,7 +26,6 @@ export class SlandingpageComponent implements OnInit {
   {
     sessionStorage.clear();
     this.route.navigateByUrl("home/login")
-    
   }
 
 }

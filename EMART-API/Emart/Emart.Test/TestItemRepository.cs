@@ -44,8 +44,8 @@ namespace Emart.Test
         [Test]
         public void Testdeleteitem()
         {
-            _repo.deleteitem(555);
-            var result = _repo.Getitem(555);
+            _repo.deleteitem(57);
+            var result = _repo.Getitem(57);
             Assert.Null(result);
                 }
         [Test]
@@ -55,8 +55,8 @@ namespace Emart.Test
             {
                 Cid = 1,
                 Scid = 1,
-                Iid = 89,
-                ItemName = "Teddy",
+                Iid = 57,
+                ItemName = "Teddybear",
                 Price = 700,
                 Remarks = "good",
                 StockNo = 3,
@@ -71,10 +71,10 @@ namespace Emart.Test
         [Test]
         public  void Testupdateitem()
         {
-            Items item = _repo.Getitem(89);
-            item.Price = 698;
+            Items item = _repo.Getitem(391);
+            item.Price = 7878;
             _repo.updateitem(item);
-            Items item1 = _repo.Getitem(89);
+            Items item1 = _repo.Getitem(391);
             Assert.AreSame(item, item1);
         }
     }

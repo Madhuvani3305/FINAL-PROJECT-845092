@@ -13,7 +13,7 @@
                <div class="form-group">
                 <label style="color: whitesmoke;">Choose Category</label>
                 <!-- <input type="text" formControlName="categoryId" class="form-control" /> -->
-                <select formControlName="cid" class="form-control" (change)="GetSubCategory()">
+                <select formControlName="cid" class="form-control">
                      <option *ngFor="let item of clist" value="{{item.cid}}">{{item.cname}}</option>   
                 </select>
             </div>
