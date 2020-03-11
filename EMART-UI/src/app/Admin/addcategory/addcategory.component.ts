@@ -33,6 +33,8 @@ onSubmit(){
   this.category.cname=this.addcategoryform.value["cname"];
   this.category.cdetails=this.addcategoryform.value["cdetails"];
   this.service.AddCategory(this.category).subscribe(res=>{
+    this.category=res;
+    console.log(res);
     console.log('Record added')
   },err=>{
     console.log(err)
@@ -40,8 +42,8 @@ onSubmit(){
   }
   )
  
-     alert("Success");
-    console.log(JSON.stringify(this.addcategoryform.value));
+    //  alert("Success");
+    // console.log(JSON.stringify(this.addcategoryform.value));
   }
 }
 

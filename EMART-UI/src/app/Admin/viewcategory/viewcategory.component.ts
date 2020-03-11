@@ -35,6 +35,19 @@ list:Category[];
   // onSubmit() {
   //   this.submitted=true;
   // }
+  Edit(){
+    //  this.item=new Category();
+     this.item.cid=Number(this.itemform.value['cid']);
+     this.item.cname=this.itemform.value['cname']
+   this.item.cdetails=this.itemform.value['cdetails']
+     
+    this.service.updatecategory(this.item).subscribe(res=>{
+    
+    console.log("updated successfully");
+   } )
+
+
+  }
   onReset() {
       this.submitted = false;
       this.itemform.reset();

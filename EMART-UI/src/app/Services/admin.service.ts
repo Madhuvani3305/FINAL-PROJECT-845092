@@ -26,6 +26,10 @@ url:string='http://localhost:58157/Admin/'
     {
       return this.http.get<Category[]>(this.url+'getcategory')
     }
+    public updatecategory(category:Category):Observable<Category>
+    {
+      return this.http.put<Category>(this.url+'updatecategory/'+JSON.stringify(category),Requestheaders);
+    }
     public DeleteCategory(cid:Number):Observable<Category>
     {
       return this.http.delete<Category>(this.url+'DeleteCategory/'+cid,Requestheaders);
