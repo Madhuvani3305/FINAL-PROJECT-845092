@@ -1,14 +1,10 @@
+&nbsp;
+&nbsp;
 <form fxLayoutAlign="center start">
-    <div class="container card col-md-4" style="background-color:transparent; float: left;">
+    <div class="container card col-md-4" style="background-color:rosybrown; float: left;">
         <div class="card-body">
             <form [formGroup]="buyerregisterform" (ngSubmit)="onSubmit()">
-                <!-- <div class="form-group ">
-                        <label>Enter BuyerId</label>
-                        <input type="text" formControlName="BuyerId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.BuyerId.errors }">
-                           <div *ngIf="submitted && f.BuyerId.errors" class="invalid-feedback">
-                            <div *ngIf="f.BuyerId.errors.required">ID is required</div>
-                        </div>
-               </div> -->
+              
                 <div class="form-group ">
                         <label>Enter the BuyerName</label>
                         <input type="text" formControlName="bname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.bname.errors }" />

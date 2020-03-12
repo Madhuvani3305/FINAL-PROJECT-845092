@@ -6,7 +6,9 @@
        float:right; 
     }
 </style>
+&nbsp;
 <div class="container card col-md-4 " id="fa" style="height:150;background-color:lightslategray">
+    &nbsp;
     <div class="card-body" >
         <form [formGroup]="additemform" (ngSubmit)="onSubmit()"  >
             <div class="form-group">
@@ -17,32 +19,10 @@
                      
                     </div>
              </div>
-            <!-- <div class="form-group">
-                <h1 style="color: seashell;">Add Items</h1> -->
-                    <!-- <label>Item ID</label>
-                    <input type="number" formControlName="iid"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.iid.errors }">
-                       <div *ngIf="submitted && f.iid.errors" class="invalid-feedback">
-                        <div *ngIf="f.iid.errors.required">Item ID is required</div>
-                    </div>
-           </div> --> 
-            <!-- <div class="form-group">
-                    <label>category ID</label>
-                    <input type="number" formControlName="cid"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cid.errors }" />
-                    <div *ngIf="submitted && f.cid.errors" class="invalid-feedback">
-                        <div *ngIf="f.cid.errors.required"> Category Id is required</div>
-                     
-                    </div>
-             </div>
-            <div class="form-group">
-                    <label>subcategory ID</label>
-                    <input type="number" formControlName="scid"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.scid.errors }" />
-                    <div *ngIf="submitted && f.scid.errors" class="invalid-feedback">
-                        <div *ngIf="f.scid.errors.required"> Sub Category Id is required</div>
-                    </div>
-            </div> -->
+           
             <div class="form-group">
                 <label style="color:white;">Choose Category</label>
-                <!-- <input type="text" formControlName="categoryId" class="form-control" /> -->
+               
                 <select formControlName="cid" class="form-control" (change)="GetSubCategory()">
                      <option *ngFor="let item of clist" value="{{item.cid}}">{{item.cname}}</option>   
                 </select>
@@ -50,7 +30,7 @@
              
             <div class="form-group">
                 <label style="color:white;">Choose SubCategory</label>
-                <!-- <input type="text" formControlName="subcategoryId" class="form-control" /> -->
+               
                 
                 <select formControlName="scid" class="form-control">
                     <option *ngFor="let item1 of slist" value="{{item1.scid}}">{{item1.sname}}</option>   

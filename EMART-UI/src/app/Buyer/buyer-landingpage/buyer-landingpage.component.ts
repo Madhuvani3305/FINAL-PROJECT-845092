@@ -8,17 +8,13 @@ import { Router } from '@angular/router';
 export class BuyerLandingpageComponent implements OnInit {
 name:string;
   constructor( private route:Router) {
-    if(localStorage.getItem("bid")==null)
+    if(localStorage.getItem("bid"))
     {
+      
+    }
+    else{
       this.route.navigateByUrl("/home/login");
     }
-    if(sessionStorage.getItem("un"))
-    {
-    this.name=sessionStorage.getItem("un");
-    console.log(this.name);
-   }
-  
- 
 }
 
   ngOnInit() {

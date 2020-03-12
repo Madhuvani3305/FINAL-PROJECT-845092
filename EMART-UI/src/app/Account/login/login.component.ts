@@ -57,8 +57,7 @@ token:Token;
     if(this.token.message=='success'){
       localStorage.setItem('token',token.token)
       localStorage.setItem('bid',String(this.token.bid));
-      // localStorage.setItem("username",this.buyer.username);
-      // localStorage.setItem("password",this.buyer.password);
+     
      this.route.navigateByUrl("/buyer-landingpage")
     }
     else{

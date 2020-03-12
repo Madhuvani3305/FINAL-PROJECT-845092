@@ -16,11 +16,7 @@ export class ViewProfileComponent implements OnInit {
   seller:Seller;
   list:Seller[];
   constructor(private formbuilder:FormBuilder,private route:Router,private service:SellerService) { 
-  //   this.service.GetDetails().subscribe(res=>{
-  //     this.list=res;
-  //     console.log(this.list);
-  //   },err=>{
-  //   })
+  
   }
   ngOnInit() {
     this.viewprofileform=this.formbuilder.group({
@@ -90,9 +86,5 @@ export class ViewProfileComponent implements OnInit {
 
     alert("Success");
     this.route.navigateByUrl('home/login');
-    
-    
-      
-    
 }
 }
