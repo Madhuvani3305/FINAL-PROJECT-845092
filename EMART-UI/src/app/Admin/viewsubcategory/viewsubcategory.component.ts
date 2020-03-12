@@ -11,10 +11,7 @@ export class ViewsubcategoryComponent implements OnInit {
   itemform:FormGroup;
   item:Subcategory;
   submitted:false;
-  list:Subcategory;
-  
-
-
+  list:Subcategory[];
     constructor(private builder:FormBuilder,private service:AdminService) {
       this.service.Getsubcategory().subscribe(res=>{
         this.list=res;
@@ -27,31 +24,48 @@ export class ViewsubcategoryComponent implements OnInit {
   
     ngOnInit() {
       this.itemform=this.builder.group({
-        scid:['',[Validators.required,Validators.pattern("^[0-9]$")]],
-        sname:['',Validators.required],
-        scdetails:['',Validators.required],
-        gst:['',Validators.required],
-        cid:['',Validators.required]
+        scid:[''],
+        sname:[''],
+        scdetails:[''],
+        gst:[''],
+        cid:['']
       })
     }
+    get f() { return this.itemform.controls; }
     Update(){
-      this.list= new Subcategory();
-      this.list.scid=this.itemform.value['scid']
-      this.list.sname=this.itemform.value['sname']
-      this.list.cid=this.itemform.value['cid']
-      this.list.scdetails=this.itemform.value['scdetails']
-      this.list.gst=this.itemform.value['gst']
-      this.service.updatesubcategory(this.list).subscribe(res=>{
+      this.item= new Subcategory();
+      this.item.scid=Number(this.itemform.value['scid'])
+      this.item.sname=this.itemform.value['sname']
+      this.item.cid=Number(this.itemform.value['cid'])
+      this.item.scdetails=this.itemform.value['scdetails']
+      this.item.gst=this.itemform.value['gst']
+      this.service.updatesubcategory(this.item).subscribe(res=>{
+        this.item=res;
+        console.log(this.item);
         console.log("updated successfully");
       })
 
     }
-
-    get f() { return this.itemform.controls; }
+    viewsubprofile(scid:number){
+      this.service.GetSubCategorybyid(scid).subscribe(  
+        res=>{this.item=res
+          console.log(this.item)
+         console.log(this.item.sname)
+      this.itemform.setValue({  
+      scid:Number(this.item.scid),
+      gst:this.item.gst,
+      cid:Number(this.item.cid),
+      sname:this.item.sname,
+      scdetails:this.item.scdetails,
+    
+    })
   
-    // onSubmit() {
-    //   this.submitted=true;
-    // }
+   } );
+  
+  }
+    
+  
+
     onReset() {
         this.submitted = false;
         this.itemform.reset();

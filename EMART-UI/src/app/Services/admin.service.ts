@@ -28,15 +28,15 @@ url:string='http://localhost:58157/Admin/'
     }
     public updatecategory(category:Category):Observable<Category>
     {
-      return this.http.put<Category>(this.url+'updatecategory/'+JSON.stringify(category),Requestheaders);
+      return this.http.put<Category>(this.url+'updatecategory/',JSON.stringify(category),Requestheaders);
     }
     public DeleteCategory(cid:Number):Observable<Category>
     {
       return this.http.delete<Category>(this.url+'DeleteCategory/'+cid,Requestheaders);
     }
-    public Getsubcategory():Observable<any>
+    public Getsubcategory():Observable<Subcategory[]>
     {
-      return this.http.get<Subcategory>(this.url+'getsubcategory/')
+      return this.http.get<Subcategory[]>(this.url+'Getsubcategory')
     }
     public DeletesubCategory(scid:Number):Observable<Subcategory>
     {
@@ -44,10 +44,17 @@ return this.http.delete<Subcategory>(this.url+'Deletesubcategory/'+scid,Requesth
     }
     public updatesubcategory(subcategory:Subcategory):Observable<Subcategory>
     {
-      return this.http.put<Subcategory>(this.url+'updatesubcategory/'+JSON.stringify(subcategory),Requestheaders);
+      return this.http.put<Subcategory>(this.url+'updatesubcategory/',JSON.stringify(subcategory),Requestheaders);
       
     }
+    public GetCategorybyid(cid:number):Observable<any>
+    {
+      return this.http.get<any>(this.url+'getcategory/'+cid,Requestheaders)
+    }
     
-
+    public GetSubCategorybyid(scid:number):Observable<any>
+    {
+      return this.http.get<any>(this.url+'getsubcategory/'+scid,Requestheaders)
+    }
 }
 

@@ -10,9 +10,11 @@ namespace Emart.AdminService.Repository
         List<Category> viewcategory();
         void AddCategory(Category obj);
         void AddSubcategory(Subcategory obj);
-        Category getbyid(int category_id);
-        Subcategory getby(int subcategory_id);
+        Category getbyid(int cid);
+        Subcategory getby(int scid);
         List<Category> Getcategory();
+        void updatecategory(Category obj);
+        void updatesubcategory(Subcategory obj);
         void deleteitem(int cid);
         List<Subcategory> Getsubcategory();
 

@@ -15,8 +15,8 @@ submitted:false;
 list:Category[];
   constructor(private builder:FormBuilder,private service:AdminService) {
     this.service.Getcategory().subscribe(res=>{
-      this.list=res;
-      console.log(this.list);
+      this.list=res
+      console.log(this.list)
     },err=>{
 
     }
@@ -32,22 +32,36 @@ list:Category[];
   }
   get f() { return this.itemform.controls; }
 
-  // onSubmit() {
-  //   this.submitted=true;
-  // }
+ 
   Edit(){
-    //  this.item=new Category();
-     this.item.cid=Number(this.itemform.value['cid']);
+    //this.item=new Category();
+     this.item.cid=Number(this.itemform.value['cid'])
      this.item.cname=this.itemform.value['cname']
    this.item.cdetails=this.itemform.value['cdetails']
-     
+    // console.log(this.item);
     this.service.updatecategory(this.item).subscribe(res=>{
-    
+      this.item=res
+      console.log(this.item)
     console.log("updated successfully");
    } )
 
 
   }
+  viewprofile(cid:number){
+    this.service.GetCategorybyid(cid).subscribe(  
+      res=>{this.item=res
+        console.log(this.item)
+        console.log(this.item.cname)
+    this.itemform.setValue({  
+    cid:Number(this.item.cid),
+    cname:this.item.cname,
+    cdetails:this.item.cdetails,
+  
+  })
+
+ });
+
+}
   onReset() {
       this.submitted = false;
       this.itemform.reset();

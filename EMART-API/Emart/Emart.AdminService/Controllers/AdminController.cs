@@ -44,16 +44,17 @@ namespace Emart.AdminService.Controllers
             _repo.AddSubcategory(obj);
         }
         [HttpGet]
-        [Route("getcategory/{category_id}")]
-        public IActionResult getcategory(int category_id)
+        [Route("getcategory/{cid}")]
+        public IActionResult getcategory(int cid)
         {
-            return Ok(_repo.getbyid(category_id));
+            return Ok(_repo.getbyid(cid));
         }
         [HttpGet]
-        [Route("getsubcategory/")]
-        public IActionResult getsubcategory()
+        [Route("getsubcategory/{scid}")]
+        public IActionResult getsubcategory(int scid)
         {
-            return Ok(_repo.Getsubcategory());
+
+            return Ok(_repo.getby(scid));
         }
         [HttpGet]
         [Route("Getcategory")]
@@ -68,6 +69,24 @@ namespace Emart.AdminService.Controllers
                 return NotFound(e.Message);
             }
         }
+        [HttpPut]
+        [Route("updatecategory")]
+        public void updatecategory(Category obj)
+        {
+
+            _repo.updatecategory(obj);
+
+
+        }
+        [HttpPut]
+        [Route("updatesubcategory")]
+        public void updatesubcategory(Subcategory obj)
+        {
+
+            _repo.updatesubcategory(obj);
+
+
+        }
         [HttpDelete]
         [Route("DeleteCategory/{cid}")]
         public void Deleteitem(int cid)
@@ -76,7 +95,7 @@ namespace Emart.AdminService.Controllers
         }
 
         [HttpGet]
-        [Route("Getsubcategory/{cid}")]
+        [Route("Getsubcategory")]
         public IActionResult Getsubcategory( )
         {
             try

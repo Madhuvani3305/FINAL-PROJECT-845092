@@ -56,7 +56,7 @@ this.transaction.transactiontype=this.buyproductform.value["transactiontype"];
 this.transaction.remarks=this.buyproductform.value["remarks"];
 console.log(this.transaction);
 this.service.purchase(this.transaction).subscribe(res=>{
-  alert("successfull");
+  alert(" Transaction successfull");
 },err=>{console.log(err)}
 )
 }

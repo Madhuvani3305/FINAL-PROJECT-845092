@@ -27,14 +27,14 @@ namespace Emart.AdminService.Repository
 
         }
 
-        public Subcategory getby(int subcategory_id)
+        public Subcategory getby(int scid)
         {
-            return _context.Subcategory.Find(subcategory_id);
+            return _context.Subcategory.Find(scid);
         }
 
-        public Category getbyid(int category_id)
+        public Category getbyid(int cid)
         {
-            return _context.Category.Find(category_id);
+            return _context.Category.Find(cid);
         }
 
         List<Category> viewcategory()
@@ -64,8 +64,18 @@ namespace Emart.AdminService.Repository
             _context.SaveChanges();
         }
 
-
-
+        public void updatecategory(Category obj)
+        {
+           
+            _context.Category.Update(obj);
+            _context.SaveChanges();
+        }
+        public void updatesubcategory(Subcategory obj)
+        {
+            
+            _context.Subcategory.Update(obj);
+            _context.SaveChanges();
+        }
 
         List<Category> IAdminRepository.viewcategory()
         {

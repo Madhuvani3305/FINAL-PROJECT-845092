@@ -47,7 +47,7 @@ export class SubcategoryComponent implements OnInit {
    this.subcategory.gst=this.addsubcategoryform.value["gst"];
    console.log(this.subcategory)
    this.service.AddSubCategory(this.subcategory).subscribe(res=>{
-    alert('Registration Successfull');
+    alert('Added Successfully');
 
    },err=>{console.log(err)}
    )

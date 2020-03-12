@@ -22,10 +22,10 @@ namespace Emart.Test
         {
             _repo.AddCategory(new Category()
             {
-                Cid = 4,
-                Cname = "Teddypillow",
+                Cid = 9,
+                Cname = "Teddyspoons",
 
-                Cdetails = "Pillow",
+                Cdetails = "spoons",
             });
             var result = _repo.getbyid(4);
             Assert.NotNull(result);
@@ -38,10 +38,10 @@ namespace Emart.Test
 
             _repo.AddSubcategory(new Subcategory()
             {
-                Cid = 4,
+                Cid = 9,
                 Scid = 3,
                 Scdetails = "gud",
-                Sname = "Small pillows",
+                Sname = "Smallspoons",
 
             });
             var result = _repo.getby(3);
@@ -50,7 +50,7 @@ namespace Emart.Test
         [Test]
         public void TestGetbycategory()
         {
-            var result = _repo.getbyid(4);
+            var result = _repo.getbyid(9);
             Assert.IsNotNull(result);
         }
         [Test]
@@ -76,8 +76,9 @@ namespace Emart.Test
         {
             var result = _repo.Getsubcategory();
             Assert.NotNull(result);
-            Assert.Greater(result.Count, 10);
+            Assert.Greater(result.Count, 5);
         }
+
     }
                 
 }

@@ -38,7 +38,7 @@ namespace Emart.Test
         {
             var result = _repo.viewitems(1);
             Assert.NotNull(result);
-            Assert.Greater(result.Count, 2);
+            Assert.Greater(result.Count, 1);
 
         }
         [Test]
@@ -55,26 +55,26 @@ namespace Emart.Test
             {
                 Cid = 1,
                 Scid = 1,
-                Iid = 57,
-                ItemName = "Teddybear",
-                Price = 700,
+                Iid = 895,
+                ItemName = "themeteddy",
+                Price = 900,
                 Remarks = "good",
                 StockNo = 3,
                 Description = "teddy",
                 Imagepath = "6.jpg",
                  Sid=1
             });
-            var result = _repo.Getitem(89);
+            var result = _repo.Getitem(895);
             Assert.NotNull(result);
 
         }
         [Test]
         public  void Testupdateitem()
         {
-            Items item = _repo.Getitem(391);
-            item.Price = 7878;
+            Items item = _repo.Getitem(393);
+            item.Price = 787;
             _repo.updateitem(item);
-            Items item1 = _repo.Getitem(391);
+            Items item1 = _repo.Getitem(393);
             Assert.AreSame(item, item1);
         }
     }
