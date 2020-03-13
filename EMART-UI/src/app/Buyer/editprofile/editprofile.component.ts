@@ -14,7 +14,15 @@ export class EditprofileComponent implements OnInit {
   submitted=false;
   list:Buyer[];
   buyer:Buyer;
-  constructor(private formbuilder:FormBuilder,private route:Router,private service:BuyerService) { }
+  constructor(private formbuilder:FormBuilder,private route:Router,private service:BuyerService) {
+    if(localStorage.getItem("bid"))
+    {
+      
+    }
+    else{
+      this.route.navigateByUrl("/home/login");
+    }
+   }
 
   ngOnInit()
    {

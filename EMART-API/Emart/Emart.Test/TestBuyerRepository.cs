@@ -44,7 +44,7 @@ namespace Emart.Test
         public void TestEditprofile()
         {
             Buyer x = _repo.getprofile(1);
-            x.Bemail = "buyer3305@gmail.com";
+            x.Bemail = "buyer305@gmail.com";
             _repo.editbuyerprofile(x);
             Buyer y = _repo.getprofile(1);
             Assert.AreSame(x, y);
@@ -67,7 +67,7 @@ namespace Emart.Test
                    DateTime=System.DateTime.Now,
                     TransactionType="credit",
                       NoOfItems=2,
-                         Tid=792,
+                         Tid=92,
                           Iid=835,
                             Sid=1,
                              Remarks="gud",
@@ -83,7 +83,7 @@ namespace Emart.Test
         {
             _repo.Addtocart(new Cart()
             {
-                Cartid = 496,
+                Cartid = 86,
                 Bid = 1,
                 Cid = 1,
                 Description = "notbad",
@@ -130,7 +130,7 @@ namespace Emart.Test
         public void TestDeleteFromCart()
         {
 
-            _repo.deletefromcart(89);
+            _repo.deletefromcart(456);
             //var x = _repo.GetCart(2);
             //Assert.Null(x);
            // Assert.Greater(x.Count, 0);

@@ -49,9 +49,9 @@ export class BuyerService {
    {
      return this.http.post<any>(this.url+'addtocart/',JSON.stringify(cart),Requestheaders);
    }
-   public deletefromcart(iid:number):Observable<any>
+   public deletefromcart(cartid:number):Observable<any>
    {
-     return this.http.delete<any>(this.url+'deletefromcart/'+iid,Requestheaders);
+     return this.http.delete<any>(this.url+'deletefromcart/'+cartid,Requestheaders);
    }
    public Getcart(bid:number):Observable<any>{
     return this.http.get<any>(this.url+'GetCart/'+bid,Requestheaders);

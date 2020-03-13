@@ -16,7 +16,15 @@ items:Items;
 list:Items[];
 cart:Cart;
 
-  constructor(private service:BuyerService,private formbuilder:FormBuilder,private services:ItemService,private router:Router) { }
+  constructor(private service:BuyerService,private formbuilder:FormBuilder,private services:ItemService,private router:Router) {
+    if(localStorage.getItem("bid"))
+    {
+      
+    }
+    else{
+      this.router.navigateByUrl("/home/login");
+    }
+   }
 
   ngOnInit() {
     this.searchform=this.formbuilder.group({

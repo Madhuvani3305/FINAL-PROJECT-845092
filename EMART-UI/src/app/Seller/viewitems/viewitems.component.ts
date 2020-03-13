@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
 import {Items} from 'src/app/Models/items';
+import {Router} from "@angular/router"
 import {UserService} from 'src/app/services/user.service';
 import {Seller} from 'src/app/Models/seller';
 import { ItemService } from 'src/app/Services/item.service';
@@ -17,7 +18,14 @@ submitted=false;
   seller:Seller;
   imagepath:string;
   isShow:boolean=true;
-  constructor(private builder:FormBuilder,private service:ItemService) {
+  constructor(private builder:FormBuilder,private route:Router,private service:ItemService) {
+    if(localStorage.getItem("sid"))
+    {
+      
+    }
+    else{
+      this.route.navigateByUrl("/home/login");
+    }
     let sid=Number(localStorage.getItem("sid"));
     this.service.ViewItems(sid).subscribe(res=>{
       this.list=res;

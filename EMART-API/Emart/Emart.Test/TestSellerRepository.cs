@@ -31,7 +31,7 @@ namespace Emart.Test
             public void TestEditProfile()
             {
                 var x = _repo.getprofile(2);
-                x.Scompany= "ITC";
+                x.Scompany= "ITCLimited";
                 _repo.EditProfile(x);
                 var y = _repo.getprofile(2);
                 Assert.AreSame(x, y);

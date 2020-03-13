@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Items } from 'src/app/Models/items';
-
+import {Router} from '@angular/router'
 import { BuyerService } from 'src/app/Services/buyer.service';
 import { Cart } from 'src/app/Models/cart';
 
@@ -16,7 +16,14 @@ items:Items;
 count:number;
 
 
-  constructor(private service:BuyerService) {
+  constructor(private service:BuyerService,private router:Router) {
+    if(localStorage.getItem("bid"))
+    {
+      
+    }
+    else{
+      this.router.navigateByUrl("/home/login");
+    }
    // let bid=Number(localStorage.getItem("bid"));
     this.service.Getcart(2).subscribe(res=>{
      this.clist=res;

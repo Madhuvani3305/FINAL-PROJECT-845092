@@ -127,7 +127,7 @@ namespace Emart.BuyerService.Controllers
 
         }
         [HttpDelete]
-        [Route("deleteformcart/{cartid}")]
+        [Route("deletefromcart/{cartid}")]
         public void Delete( int cartid )
         {
             _repo.deletefromcart(cartid);

@@ -38,9 +38,9 @@ namespace Emart.Test
         {
             _repo.BuyerRegister(new Buyer()
             {
-                 Bid=45,
-                  Bname="guru",
-                   Bemail="guru@gmail.com",
+                 Bid=46,
+                  Bname="priya",
+                   Bemail="priya@gmail.com",
                     Bpwd="ASDFGHJ@",
                      Bno="963582147",
                       Bdate=System.DateTime.Now,
@@ -61,10 +61,10 @@ namespace Emart.Test
         {
             _repo.SellerRegister(new Seller()
             {
-                Sid= 55,
+                Sid= 5,
                  Semail= "seller99@gmail.com",
-                Sno = "9999999999",
-                Sname = "seller45",
+                Sno = "9999999599",
+                Sname = "seller5",
                 //   Createddate = System.DateTime.Now,
                  Spwd = "ASDFGHJ*",
                  BreifAboutCompany  = "good ",

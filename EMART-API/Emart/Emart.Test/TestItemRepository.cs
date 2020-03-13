@@ -29,7 +29,7 @@ namespace Emart.Test
         [Test]
         public void TestGetitem()
         {
-            var result = _repo.Getitem(689);
+            var result = _repo.Getitem(506);
             Assert.IsNotNull(result);
         }
         [Test]
@@ -44,8 +44,8 @@ namespace Emart.Test
         [Test]
         public void Testdeleteitem()
         {
-            _repo.deleteitem(57);
-            var result = _repo.Getitem(57);
+            _repo.deleteitem(986);
+            var result = _repo.Getitem(986);
             Assert.Null(result);
                 }
         [Test]
@@ -55,7 +55,7 @@ namespace Emart.Test
             {
                 Cid = 1,
                 Scid = 1,
-                Iid = 895,
+                Iid = 85,
                 ItemName = "themeteddy",
                 Price = 900,
                 Remarks = "good",
@@ -64,7 +64,7 @@ namespace Emart.Test
                 Imagepath = "6.jpg",
                  Sid=1
             });
-            var result = _repo.Getitem(895);
+            var result = _repo.Getitem(85);
             Assert.NotNull(result);
 
         }
@@ -72,7 +72,7 @@ namespace Emart.Test
         public  void Testupdateitem()
         {
             Items item = _repo.Getitem(393);
-            item.Price = 787;
+            item.Price = 707;
             _repo.updateitem(item);
             Items item1 = _repo.Getitem(393);
             Assert.AreSame(item, item1);

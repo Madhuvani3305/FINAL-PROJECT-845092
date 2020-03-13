@@ -15,7 +15,15 @@ submitted:false;
 transaction:Transaction;
 buyproductform:FormGroup;
 
-  constructor(private formbuilder:FormBuilder,private router:Router,private service :BuyerService) { }
+  constructor(private formbuilder:FormBuilder,private router:Router,private service :BuyerService) {
+    if(localStorage.getItem("bid"))
+    {
+      
+    }
+    else{
+      this.router.navigateByUrl("/home/login");
+    }
+   }
 
   ngOnInit() {
     this.buyproductform=this.formbuilder.group({
@@ -57,6 +65,7 @@ this.transaction.remarks=this.buyproductform.value["remarks"];
 console.log(this.transaction);
 this.service.purchase(this.transaction).subscribe(res=>{
   alert(" Transaction successfull");
+  this.router.navigateByUrl('buyer-landingpage/purchasehistory');
 },err=>{console.log(err)}
 )
 }

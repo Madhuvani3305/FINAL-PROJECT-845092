@@ -16,7 +16,13 @@ export class ViewProfileComponent implements OnInit {
   seller:Seller;
   list:Seller[];
   constructor(private formbuilder:FormBuilder,private route:Router,private service:SellerService) { 
-  
+    if(localStorage.getItem("sid"))
+    {
+      
+    }
+    else{
+      this.route.navigateByUrl("/home/login");
+    }
   }
   ngOnInit() {
     this.viewprofileform=this.formbuilder.group({

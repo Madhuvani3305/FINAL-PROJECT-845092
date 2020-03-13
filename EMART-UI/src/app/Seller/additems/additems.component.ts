@@ -23,6 +23,14 @@ Items:Items;
 imagepath:string;
 SelectedFile:File=null;
   constructor(private formbuilder:FormBuilder,private route:Router, private service:ItemService,private services:AdminService,private buyerservice:BuyerService) { 
+   
+    if(localStorage.getItem("sid"))
+    {
+      
+    }
+    else{
+      this.route.navigateByUrl("/home/login");
+    }
     this.services.Getcategory().subscribe(res=>{
       this.clist=res;
       console.log(this.clist);
