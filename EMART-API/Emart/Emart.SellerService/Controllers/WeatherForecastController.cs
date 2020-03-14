@@ -22,6 +22,7 @@ namespace Emart.SellerService.Controllers
         {
             _logger = logger;
         }
+      
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()

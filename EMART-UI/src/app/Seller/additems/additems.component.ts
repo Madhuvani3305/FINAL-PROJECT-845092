@@ -75,7 +75,6 @@ imagepath:['',Validators.required],
     )
     //display form value on success
   
-      alert("Success")
     
       
     }

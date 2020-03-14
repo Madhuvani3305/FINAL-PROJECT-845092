@@ -35,8 +35,9 @@ count:number;
     alert("deleted")
     console.log(cartid);
     this.service.deletefromcart(cartid).subscribe(res=>{
+     
       console.log('Item Removed from Cart');
-      alert('Item Removed from Cart');
+      
     })
   }
   ngOnInit() {
