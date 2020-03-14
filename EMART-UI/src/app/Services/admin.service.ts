@@ -40,7 +40,7 @@ url:string='http://localhost:58157/Admin/'
     }
     public DeletesubCategory(scid:Number):Observable<Subcategory>
     {
-return this.http.delete<Subcategory>(this.url+'Deletesubcategory/'+scid,Requestheaders);
+      return this.http.delete<Subcategory>(this.url+'Deletesubcategory/'+scid,Requestheaders);
     }
     public updatesubcategory(subcategory:Subcategory):Observable<Subcategory>
     {
